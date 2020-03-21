@@ -1,0 +1,68 @@
+/* OVER ALL */
+.hide {
+    display: none;
+}
+
+/* PAGE HEADER */
+#pageHeaderText {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*==============================================================================*/
+
+/* SEARCH BAR */
+#searchRecipe {
+    background-color: #7f1c30;
+}
+#searchButton:hover {
+    background-color: #ffebef;
+    color: #ff3860;
+    border: 1px solid #ff3860;
+}
+input[type=text] {
+    color: #ff3860;
+}
+
+/*==============================================================================*/
+
+/* SEARCH RESULTS */
+#recipeLink {
+    text-decoration: none;
+}
+.recipe-name {
+    font-size: 40px;
+}
+.result-recipe-info {
+    color: white;
+    font-size: 40px;
+}
+.recipe-results-card {
+    background-color: #b22743;
+    color: white;
+}
+.recipe-results-card:hover {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+}
+.recipe-item {
+    background-color: #b22743;
+}
+.star-number, .result-calories, .result-servings, .result-prep-time {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    color: #ef8499;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*==============================================================================*/
+
+/* PAGE FOOTER */
+#footer {
+    background-color: #ff3860;
+    color: white;
+    font-size: 25px;
+}
