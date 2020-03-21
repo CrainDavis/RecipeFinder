@@ -3,10 +3,18 @@
     display: none;
 }
 
+/*==============================================================================*/
+
 /* PAGE HEADER */
 #pageHeaderText {
     padding-left: 0px;
     padding-right: 0px;
+}
+#homeLinkBtn:hover {
+    background-color: #ef8499;
+}
+#searchLinkBtn:hover {
+    background-color: #ef8499;
 }
 
 /*==============================================================================*/
