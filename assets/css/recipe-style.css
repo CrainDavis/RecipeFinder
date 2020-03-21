@@ -1,0 +1,121 @@
+/* OVER ALL */
+.hide {
+    display: none;
+}
+
+/*==============================================================================*/
+
+/* PAGE HEADER */
+#pageHeaderText {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#homeLinkBtn:hover {
+    background-color: #ef8499;
+}
+#searchLinkBtn:hover {
+    background-color: #ef8499;
+}
+
+/*==============================================================================*/
+
+/* RECIPE NAME */
+#recipeName {
+    background-color: #7f1c30;
+    color: white;
+}
+#recipeNameText {
+    font-size: 50px;
+}
+#favoriteRecipe {
+    font-weight: bold;
+    font-size: 20px;
+}
+#favoriteRecipe:hover {
+    background-color: #ffebef;
+    color: #ff3860;
+    border: 2px solid #ff3860;
+}
+.fa-heart {
+    margin-right: 5px;
+}
+
+/* INGREDIENTS LIST */
+#ingredientListTile {
+    background-color: #b22743;
+    color: white;
+}
+#ingredientsTitle {
+    background-color: #ef8499;
+    padding: 20px;
+    border-radius: 5px;
+}
+#ingredientsList {
+    background-color: #ffebef;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+.ingredient-list-item {
+    font-size: 30px;
+    color: #7f1c30;
+}
+
+/* RECIPE ICONS */
+#recipeInfo {
+    background-color: #b22743;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+#costNumber, #calorieCount, #servingNumber, #prepTime {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    color: #ff3860;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* HEALTH INFO */
+#healthInfoTile {
+    background-color: #ef8499;
+    color: white;
+}
+
+/* IMAGE */
+#recipeImageTile {
+    background-color: #7f1c30;
+    padding-right: 25px;
+}
+#recipeImage {
+    border: 10px solid #ef8499;
+}
+
+/* COOKING INSTRUCTIONS */
+#cookingInstructions {
+    background-color: #b22743;
+    color: white;
+}
+#externalRecipeLink {
+    font-weight: bold;
+}
+#externalRecipeLink:hover {
+    background-color: #ffebef;
+    color: #ff3860;
+    border: 2px solid #ff3860;
+}
+.button-fork-icon {
+    margin-left: 10px;
+}
+
+/*==============================================================================*/
+
+/* PAGE FOOTER */
+#footer {
+    background-color: #ff3860;
+    color: white;
+    font-size: 25px;
+}
+
