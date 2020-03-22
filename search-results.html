@@ -1,70 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>rec[i]pe | Search</title>
     <!-- Bulma CSS & Bulma FontAwesome link -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <!-- project CSS -->
-    <link rel="stylesheet" href="assets/css/search-results.css" />
+    <link rel="stylesheet" href="assets/css/search-results.css">
   </head>
   <body>
     <!-- PAGE HEADER -->
     <section class="hero is-danger">
-      <div class="hero-body">
-        <div class="tile is-ancestor">
-          <!-- header text -->
-          <div class="tile is-vertical is-8">
+        <div class="hero-body">
+          <div class="tile is-ancestor">
+            <!-- header text -->
+            <div class="tile is-vertical is-8">
+              <div class="tile is-parent">
+                <article class="tile is-child notification is-danger">
+                    <div id="pageHeaderText" class="container is-fluid">
+                      <h1 class="title is-1 indexPage-headerTitle">rec<span style="color:#7f1c30; background-color:#ffebef; padding:2px; padding-bottom:6px; border-radius:5px;">[<span style="color: #ef8499;">i</span>]</span>pe</h1>
+                      <h2 class="subtitle is-4 indexPage-headerSubtitle">just search, browse, and get cooking!</h2>
+                    </div>
+                </article>
+              </div>
+            </div>
+            <!-- PAGE HEADER LOGO -->
             <div class="tile is-parent">
               <article class="tile is-child notification is-danger">
-                <div id="pageHeaderText" class="container is-fluid">
-                  <h1 class="title is-1 indexPage-headerTitle">
-                    rec<span
-                      style="color:#7f1c30; background-color:#ffebef; padding:2px; padding-bottom:6px; border-radius:5px;"
-                      >[<span style="color: #ef8499;">i</span>]</span
-                    >pe
-                  </h1>
-                  <h2 class="subtitle is-4 indexPage-headerSubtitle">
-                    just search, browse, and get cooking!
-                  </h2>
+                <div class="content is-pulled-right">
+                    <i class="fas fa-utensils fa-10x"></i>
                 </div>
               </article>
             </div>
           </div>
-          <!-- PAGE HEADER LOGO -->
-          <div class="tile is-parent">
-            <article class="tile is-child notification is-danger">
-              <div class="content is-pulled-right">
-                <i class="fas fa-utensils fa-10x"></i>
-              </div>
-            </article>
-          </div>
         </div>
-      </div>
-      <!-- page header tab links -->
-      <div class="hero-foot">
-        <nav class="tabs">
-          <div class="container">
-            <ul>
-              <li id="homeLinkBtn"><a>home page</a></li>
-              <li id="searchLinkBtn" class="is-active">
-                <a>search for recipe</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+        <!-- page header tab links -->
+        <div class="hero-foot">
+          <nav class="tabs">
+            <div class="container">
+              <ul>
+                <li id="homeLinkBtn"><a>home page</a></li>
+                <li id="searchLinkBtn" class="is-active"><a>search for recipe</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
     </section>
 
-    <br />
+    <br>
 
     <div class="container is-fluid">
       <!-- search input -->
@@ -72,115 +57,85 @@
         <p class="title">Find a Recipe</p>
         <p class="subtitle">search by dish name, cuisine, ingredients...</p>
         <div class="field has-addons">
-          <div class="control is-expanded">
-            <input
-              id="searchInput"
-              type="text"
-              class="input is-danger is-large"
-              placeholder=""
-            />
-          </div>
-          <p class="control">
-            <button id="searchButton" class="button is-danger is-large">
-              <i class="fas fa-search"></i>
-            </button>
-          </p>
+            <div class="control is-expanded">
+                <input id="searchInput" type="text" class="input is-danger is-large" placeholder="">
+            </div>
+            <p class="control">
+                <button id="searchButton" class="button is-danger is-large"><i class="fas fa-search"></i></button>
+            </p>
         </div>
       </article>
 
-      <br />
+      <br>
 
       <a id="recipeLink" class="recipe-link">
-        <article
-          id="recipeResultCard"
-          class="recipe-results-card tile is-child notification"
-        >
+        <article id="recipeResultCard" class="recipe-results-card tile is-child notification">
           <p id="recipeName" class="recipe-name title">Recipe Name</p>
           <div class="content">
+
             <article class="recipe-item tile is-child notification">
               <div class="content">
                 <!-- recipe cost, nutrition info, servings -->
                 <div class="columns">
-                  <div class="column is-three-quarters">
-                    <div
-                      id="resultRecipeInfo"
-                      class="result-recipe-info columns"
-                    >
-                      <div
-                        id="resultCost"
-                        class="result-cost column is-one-quarter"
-                      >
-                        <i class="fas fa-dollar-sign"></i>
-                        <span id="starCost" class="cost-number"></span>
+                  <div id="recipeStats" style="text-align:center;" class="column">
+                    <div id="resultRecipeInfo" class="result-recipe-info columns">
+                      <div id="resultCost" class="result-cost column is-one-quarter">
+                        <i class="fas fa-dollar-sign"></i> <span id="starCost" class="cost-number"></span>
                       </div>
-                      <div id="resultCalories" class="column is-one-quarter">
-                        <span class="result-calories"></span>
-                        <i class="fas fa-fire"></i>
-                      </div>
-                      <div id="resultServings" class="column is-one-quarter">
-                        <span class="result-servings"></span>
-                        <i class="fas fa-user"></i>
-                      </div>
-                      <div id="resultsPrepTime" class="column is-one-quarter">
-                        <span class="result-prep-time"></span>
-                        <i class="fas fa-clock"></i>
-                      </div>
+                      <div id="resultCalories" class="column is-one-quarter"><span class="result-calories"></span> <i class="fas fa-fire"></i></div>
+                      <div id="resultServings" class="column is-one-quarter"><span class="result-servings"></span> <i class="fas fa-user"></i></div>
+                      <div id="resultsPrepTime" class="column is-one-quarter"><span class="result-prep-time"></span> <i class="fas fa-clock"></i></div>
                     </div>
-                    <!-- recipe description-->
-                    <div class="recipe-health-info">
-                      <p
-                        class="subtitle"
-                        style="font-weight:bold; color:#ef8499;"
-                      >
-                        Health Info:
-                        <span
-                          class="description-health-info"
-                          style="font-weight: normal; color:white;"
-                          >display information from healthLabels and dietLabels
-                          here.</span
-                        >
-                      </p>
-                    </div>
-                    <br />
-                    <div class="recipe-description">
-                      <p
-                        class="subtitle"
-                        style="font-weight:bold; color:#ef8499;"
-                      >
-                        Description:
-                        <span
-                          class="description-main"
-                          style="font-weight: normal; color:white;"
-                          >display ingredients here.</span
-                        >
-                      </p>
-                    </div>
-                  </div>
-                  <div class="column is-one-quarter" style="padding:0px;">
-                    <img
-                      class="search-image"
-                      src="https://bulma.io/images/placeholders/256x256.png"
-                    />
                   </div>
                 </div>
               </div>
             </article>
+            <div class="tile is-ancestor">
+              <div class="tile is-vertical is-12">
+                <div class="tile">
+                  <div class="tile is-parent is-vertical">
+                    <!-- health info & ingredients -->
+                    <article id="healthInfoTile" class="tile is-child notification">
+                      <div>
+                        <p class="subtitle recipe-health-info" style="font-weight:bold; color:#ef8499;">Health Info: <span class="description-health-info" style="font-weight: normal; color:white;">display information from healthLabels and dietLabels here.</span></p>
+                      </div>
+                      <br>
+                      <div>
+                        <p class="subtitle recipe-description" style="font-weight:bold; color:#ef8499;">Ingredients: <span class="description-main" style="font-weight: normal; color:white;">display ingredients here.</span></p>
+                      </div>
+                    </article>
+                    <!-- buttons -->
+                    <article id="buttonsTile" class="tile is-child notification">
+                      <button id="favoriteButton" style="margin-right:50px;" class="button is-large is-danger">Favorite <i class="fas fa-heart"></i></button>
+                      <button id="externalLinkButton" class="button is-large is-danger">Get Cooking</button>
+                    </article>
+                  </div>
+                  <!-- image -->
+                  <div class="tile is-parent">
+                    <article id="imageTile" class="tile is-child notification">
+                      <img class="search-image" style="margin-left:20px;" src="https://bulma.io/images/placeholders/128x128.png">
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </article>
+        
       </a>
 
-      <br />
+      <br>
     </div>
 
-    <br />
+    <br>
 
     <footer id="footer" class="footer">
-      <div class="content has-text-centered">
-        <p>&copy; Juan Acosta, Paul Wachira, & Chyna Davis</p>
-      </div>
+        <div class="content has-text-centered">
+          <p>&copy; Juan Acosta, Paul Wachira, & Chyna Davis</p>
+        </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/search-results-page.js"></script>
   </body>
 </html>
