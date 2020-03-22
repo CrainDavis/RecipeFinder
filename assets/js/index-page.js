@@ -1,9 +1,13 @@
 // On click events
 // search for recipe
-$("#searchLinkBtn").on("click", function() {});
+$("#searchLinkBtn").on("click", function() {
+  window.location = "../../search-results.html";
+});
 
 // Go button
-$("#searchButton").on("click", function() {});
+$("#searchButton").on("click", function() {
+  window.location = "../../search-results.html";
+});
 
 // APi variables
 
@@ -53,7 +57,7 @@ $.ajax({
 
   // Calories from API
   var calorieCount1 = response.hits[0].recipe.calories;
-  var calorieCount1Fixed = calorieCount1.toFixed(2);
+  var calorieCount1Fixed = calorieCount1.toFixed(0);
   $("#calorieCount1").append(calorieCount1Fixed);
 
   // Serving Size from API
