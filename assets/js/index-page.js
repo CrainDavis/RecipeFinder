@@ -38,12 +38,32 @@ $.ajax({
     "&apiKey=" +
     secondappKey;
 
-  //   console.log(queryURLsecondApi);
+  // Recipe Name
+  var suggestionrecipe1Link = response.hits[0].recipe.url;
+  console.log(suggestionrecipe1Link);
+  var suggestionRecipe1 = response.hits[0].recipe.label;
+  var suggestionRecipe1Url = $("<a>").attr("href", suggestionrecipe1Link);
 
-  //   console.log(suggestionRecipe1image);
+  suggestionRecipe1Url.append(suggestionRecipe1);
+  $("#suggestionRecipe1").append(suggestionRecipe1Url);
 
+  // Image from API
   var suggestionImage1Id = $("#suggestionImage1");
   suggestionImage1Id.attr("src", suggestionRecipe1image);
+
+  // Calories from API
+  var calorieCount1 = response.hits[0].recipe.calories;
+  var calorieCount1Fixed = calorieCount1.toFixed(2);
+  $("#calorieCount1").append(calorieCount1Fixed);
+
+  // Serving Size from API
+  var servingNumber1 = response.hits[0].recipe.yield;
+  $("#servingNumber1").append(servingNumber1);
+
+  // Cooking time
+  var prepTime1 = response.hits[0].recipe.totalTime;
+  $("#prepTime1").append(prepTime1);
+
   $.ajax({
     url: queryURLsecondApi,
     method: "GET"
