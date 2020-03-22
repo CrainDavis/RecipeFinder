@@ -1,13 +1,9 @@
 // On click events
 // search for recipe
-$("#searchLinkBtn").on("click", function() {
-  window.location = "../../search-results.html";
-});
+$("#searchLinkBtn").on("click", function() {});
 
 // Go button
-$("#searchButton").on("click", function() {
-  window.location = "../../search-results.html";
-});
+$("#searchButton").on("click", function() {});
 
 // APi variables
 
@@ -42,32 +38,12 @@ $.ajax({
     "&apiKey=" +
     secondappKey;
 
-  // Recipe Name
-  var suggestionrecipe1Link = response.hits[0].recipe.url;
-  console.log(suggestionrecipe1Link);
-  var suggestionRecipe1 = response.hits[0].recipe.label;
-  var suggestionRecipe1Url = $("<a>").attr("href", suggestionrecipe1Link);
+  //   console.log(queryURLsecondApi);
 
-  suggestionRecipe1Url.append(suggestionRecipe1);
-  $("#suggestionRecipe1").append(suggestionRecipe1Url);
+  //   console.log(suggestionRecipe1image);
 
-  // Image from API
   var suggestionImage1Id = $("#suggestionImage1");
   suggestionImage1Id.attr("src", suggestionRecipe1image);
-
-  // Calories from API
-  var calorieCount1 = response.hits[0].recipe.calories;
-  var calorieCount1Fixed = calorieCount1.toFixed(0);
-  $("#calorieCount1").append(calorieCount1Fixed);
-
-  // Serving Size from API
-  var servingNumber1 = response.hits[0].recipe.yield;
-  $("#servingNumber1").append(servingNumber1);
-
-  // Cooking time
-  var prepTime1 = response.hits[0].recipe.totalTime;
-  $("#prepTime1").append(prepTime1);
-
   $.ajax({
     url: queryURLsecondApi,
     method: "GET"
