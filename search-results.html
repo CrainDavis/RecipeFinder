@@ -90,122 +90,112 @@
 
       <br />
 
-        <article
-          id="recipeResultCard"
-          class="recipe-results-card tile is-child notification"
-        >
-          <p id="recipeName" class="recipe-name title">Recipe Name</p>
-          <div class="content">
-            <article class="recipe-item tile is-child notification">
-              <div class="content">
-                <!-- recipe cost, nutrition info, servings -->
-                <div class="columns">
-                  <div
-                    id="recipeStats"
-                    style="text-align:center;"
-                    class="column"
-                  >
+      <article
+        id="recipeResultCard"
+        class="recipe-results-card tile is-child notification"
+      >
+        <p id="recipeName" class="recipe-name title">Recipe Name</p>
+        <div class="content">
+          <article class="recipe-item tile is-child notification">
+            <div class="content">
+              <!-- recipe cost, nutrition info, servings -->
+              <div class="columns">
+                <div id="recipeStats" style="text-align:center;" class="column">
+                  <div id="resultRecipeInfo" class="result-recipe-info columns">
                     <div
-                      id="resultRecipeInfo"
-                      class="result-recipe-info columns"
+                      id="resultCost"
+                      class="result-cost column is-one-quarter"
                     >
-                      <div
-                        id="resultCost"
-                        class="result-cost column is-one-quarter"
-                      >
-                        <i class="fas fa-dollar-sign"></i>
-                        <span id="starCost" class="cost-number"></span>
-                      </div>
-                      <div id="resultCalories" class="column is-one-quarter">
-                        <span class="result-calories"></span>
-                        <i class="fas fa-fire"></i>
-                      </div>
-                      <div id="resultServings" class="column is-one-quarter">
-                        <span class="result-servings"></span>
-                        <i class="fas fa-user"></i>
-                      </div>
-                      <div id="resultsPrepTime" class="column is-one-quarter">
-                        <span class="result-prep-time"></span>
-                        <i class="fas fa-clock"></i>
-                      </div>
+                      <i class="fas fa-dollar-sign"></i>
+                      <span id="starCost" class="cost-number"></span>
+                    </div>
+                    <div id="resultCalories" class="column is-one-quarter">
+                      <i class="fas fa-fire"></i>
+                      <span class="result-calories"></span>
+                    </div>
+                    <div id="resultServings" class="column is-one-quarter">
+                      <i class="fas fa-user"></i>
+                      <span class="result-servings"></span>
+                    </div>
+                    <div id="resultsPrepTime" class="column is-one-quarter">
+                      <i class="fas fa-clock"></i>
+                      <span class="result-prep-time"></span>
                     </div>
                   </div>
                 </div>
               </div>
-            </article>
-            <div class="tile is-ancestor">
-              <div class="tile is-vertical is-12">
-                <div class="tile">
-                  <div class="tile is-parent is-vertical">
-                    <!-- health info & ingredients -->
-                    <article
-                      id="healthInfoTile"
-                      class="tile is-child notification"
-                    >
-                      <div>
-                        <p
-                          class="subtitle recipe-health-info"
-                          style="font-weight:bold; color:#ef8499;"
-                        >
-                          Health Info:
-                          <span
-                            class="description-health-info"
-                            style="font-weight: normal; color:white;"
-                            >display information from healthLabels and
-                            dietLabels here.</span
-                          >
-                        </p>
-                      </div>
-                      <br />
-                      <div>
-                        <p
-                          class="subtitle recipe-description"
-                          style="font-weight:bold; color:#ef8499;"
-                        >
-                          Ingredients:
-                          <span
-                            class="description-main"
-                            style="font-weight: normal; color:white;"
-                            >display ingredients here.</span
-                          >
-                        </p>
-                      </div>
-                    </article>
-                    <!-- buttons -->
-                    <article
-                      id="buttonsTile"
-                      class="tile is-child notification"
-                    >
-                      <button
-                        id="favoriteButton"
-                        style="margin-right:50px;"
-                        class="button is-large is-danger"
+            </div>
+          </article>
+          <div class="tile is-ancestor">
+            <div class="tile is-vertical is-12">
+              <div class="tile">
+                <div class="tile is-parent is-vertical">
+                  <!-- health info & ingredients -->
+                  <article
+                    id="healthInfoTile"
+                    class="tile is-child notification"
+                  >
+                    <div>
+                      <p
+                        class="subtitle recipe-health-info"
+                        style="font-weight:bold; color:#ef8499;"
                       >
-                        Favorite <i class="fas fa-heart"></i>
-                      </button>
-                      <button
-                        id="externalLinkButton"
-                        class="button is-large is-danger"
+                        Health Info:
+                        <span
+                          class="description-health-info"
+                          style="font-weight: normal; color:white;"
+                          >display information from healthLabels and dietLabels
+                          here.</span
+                        >
+                      </p>
+                    </div>
+                    <br />
+                    <div>
+                      <p
+                        class="subtitle recipe-description"
+                        style="font-weight:bold; color:#ef8499;"
                       >
-                        Get Cooking
-                      </button>
-                    </article>
-                  </div>
-                  <!-- image -->
-                  <div class="tile is-parent">
-                    <article id="imageTile" class="tile is-child notification">
-                      <img
-                        class="search-image"
-                        style="margin-left:20px;"
-                        src="https://bulma.io/images/placeholders/128x128.png"
-                      />
-                    </article>
-                  </div>
+                        Ingredients:
+                        <span
+                          class="description-main"
+                          style="font-weight: normal; color:white;"
+                          >display ingredients here.</span
+                        >
+                      </p>
+                    </div>
+                  </article>
+                  <!-- buttons -->
+                  <article id="buttonsTile" class="tile is-child notification">
+                    <button
+                      id="favoriteButton"
+                      style="margin-right:50px;"
+                      class="button is-large is-danger"
+                    >
+                      Favorite <i class="fas fa-heart"></i>
+                    </button>
+                    <button
+                      id="externalLinkButton"
+                      class="button is-large is-danger"
+                    >
+                      Get Cooking
+                    </button>
+                  </article>
+                </div>
+                <!-- image -->
+                <div class="tile is-parent">
+                  <article id="imageTile" class="tile is-child notification">
+                    <img
+                      class="search-image"
+                      style="margin-left:20px;"
+                      src="https://bulma.io/images/placeholders/128x128.png"
+                    />
+                  </article>
                 </div>
               </div>
             </div>
           </div>
-        </article>
+        </div>
+      </article>
 
       <br />
     </div>
