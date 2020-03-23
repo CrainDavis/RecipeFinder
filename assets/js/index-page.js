@@ -1,12 +1,12 @@
 // On click events
 // search for recipe
 $("#searchLinkBtn").on("click", function() {
-  window.location = "../../search-results.html";
+  window.location = "search-results.html";
 });
 
 // Go button
 $("#searchButton").on("click", function() {
-  window.location = "../../search-results.html";
+  window.location = "search-results.html";
 });
 
 // APi variables
