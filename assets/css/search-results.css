@@ -60,26 +60,27 @@ input[type=text] {
 .recipe-health-info, .recipe-description {
     font-size: 30px;
 }
-#healthInfoTile, #buttonsTile, #imageTile {
+.health-info-tile, .buttons-tile, .image-tile {
     background-color: #b22743;
 }
 .search-image {
     width: 400px;
     border: 10px solid #ffebef;
 }
-#favoriteButton, #externalLinkButton {
+.favorite-button, .external-link-button {
     font-weight: bold;
     margin-bottom: 20px;
+    font-size: 30px;
+    background-color: #ff3860;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px;
 }
 .fa-heart {
     margin-left: 10px;
 }
-#favoriteButton:hover {
-    background-color: #ffebef;
-    color: #ff3860;
-    border: 2px solid #ff3860;
-}
-#externalLinkButton:hover {
+.favorite-button:hover, .external-link-button:hover {
     background-color: #ffebef;
     color: #ff3860;
     border: 2px solid #ff3860;
