@@ -79,13 +79,17 @@
 #favoriteButtonsTile {
     background-color: #b22743;
 }
-#favoriteButton {
+.favorite-button {
+    width: 100%;
     background-color: #ef8499;
+    color: white;
+    border: none;
     margin-bottom: 20px;
+    padding: 15px;
     font-size: 20px;
     font-weight: bold;
 }
-#favoriteButton:hover {
+.favorite-button:hover {
     background-color: #ffebef;
     color: #ff3860;
     border: 2px solid #ff3860;
