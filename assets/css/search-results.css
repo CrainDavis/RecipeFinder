@@ -1,96 +1,118 @@
 /* OVER ALL */
 .hide {
-    display: none;
+  display: none;
 }
 
 /*==============================================================================*/
 
 /* PAGE HEADER */
 #pageHeaderText {
-    padding-left: 0px;
-    padding-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 #homeLinkBtn:hover {
-    background-color: #ef8499;
+  background-color: #ef8499;
 }
 #searchLinkBtn:hover {
-    background-color: #ef8499;
+  background-color: #ef8499;
 }
 
 /*==============================================================================*/
 
 /* SEARCH BAR */
 #searchRecipe {
-    background-color: #7f1c30;
+  background-color: #7f1c30;
 }
 #searchButton:hover {
-    background-color: #ffebef;
-    color: #ff3860;
-    border: 1px solid #ff3860;
+  background-color: #ffebef;
+  color: #ff3860;
+  border: 1px solid #ff3860;
 }
-input[type=text] {
-    color: #ff3860;
+input[type="text"] {
+  color: #ff3860;
 }
 
 /*==============================================================================*/
 
 /* SEARCH RESULTS */
 .recipe-name {
-    font-size: 40px;
+  font-size: 40px;
 }
 .result-recipe-info {
-    color: white;
-    font-size: 40px;
+  color: white;
+  font-size: 40px;
 }
 .recipe-results-card {
-    background-color: #b22743;
-    color: white;
+  background-color: #b22743;
+  color: white;
 }
+
+.recipe-results-card.tile.is-child {
+  margin-bottom: 20px !important;
+}
+
+.recipe-results-card .content {
+  width: 100%;
+}
+
 .recipe-item {
-    background-color: #b22743;
+  background-color: #b22743;
 }
-.cost-number, .result-calories, .result-servings, .result-prep-time {
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    color: #ef8499;
-    font-weight: bold;
-    text-align: center;
+.cost-number,
+.result-calories,
+.result-servings,
+.result-prep-time {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  color: #ef8499;
+  font-weight: bold;
+  text-align: center;
 }
-.recipe-health-info, .recipe-description {
-    font-size: 30px;
+.recipe-health-info,
+.recipe-description {
+  font-size: 30px;
 }
-.health-info-tile, .buttons-tile, .image-tile {
-    background-color: #b22743;
+.health-info-tile,
+.buttons-tile,
+.image-tile {
+  background-color: #b22743;
 }
 .search-image {
-    width: 400px;
-    border: 10px solid #ffebef;
+  width: 400px;
+  border: 10px solid #ffebef;
 }
-.favorite-button, .external-link-button {
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 30px;
-    background-color: #ff3860;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 15px;
+.favorite-button,
+.external-link-button {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 30px;
+  background-color: #ff3860;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px;
 }
 .fa-heart {
-    margin-left: 10px;
+  margin-left: 10px;
 }
-.favorite-button:hover, .external-link-button:hover {
-    background-color: #ffebef;
-    color: #ff3860;
-    border: 2px solid #ff3860;
+.favorite-button:hover,
+.external-link-button:hover {
+  background-color: #ffebef;
+  color: #ff3860;
+  border: 2px solid #ff3860;
 }
 
 /*==============================================================================*/
 
 /* PAGE FOOTER */
 #footer {
-    background-color: #ff3860;
-    color: white;
-    font-size: 25px;
+  background-color: #ff3860;
+  color: white;
+  font-size: 25px;
+}
+
+#test {
+  margin-left: 30px;
+  margin-right: 30px;
 }
