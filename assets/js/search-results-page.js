@@ -22,18 +22,6 @@ function searchForRecipe(food) {
   }).then(function(response) {
     console.log(response);
 
-    var cleanlabel = response.hits[0].recipe.label.split("-")[0];
-
-    var labelappid = encodeURIComponent(cleanlabel);
-
-    var secondappKey = "b570c798b46047929f8bfc634db0cf67";
-
-    var queryURLsecondApi =
-      "https://api.spoonacular.com/recipes/search?query=" +
-      labelappid +
-      "&apiKey=" +
-      secondappKey;
-
     for (var i = 0; i < response.hits.length; i++) {
       // article id recipeResult
       var articleRecipeResult = $("<article>");
@@ -254,14 +242,13 @@ function searchForRecipe(food) {
       // getCooking Button
       var getCookingButton = $("<button>");
       getCookingButton.addClass("external-link-button is-large is-danger");
-      getCookingButton.html("Get Cooking");
-      articleButtons.append(getCookingButton);
+      var getCookingHere = response.hits[i].recipe.url;
+      var getCookingHereUrl = $("<a>").attr("href", getCookingHere);
 
-      getCookingButton.on("click", function(event) {
-        event.preventDefault();
-        var getCookingHere = response.hits[i].recipe.url;
-        window.location = getCookingHere;
-      });
+      getCookingButton.html("Get Cooking");
+      //appending url to getCookinghereUrl
+      getCookingHereUrl.append(getCookingButton);
+      articleButtons.append(getCookingHereUrl);
 
       //===============================================================
       // div class tile is parent second child of divTile
@@ -276,48 +263,52 @@ function searchForRecipe(food) {
       // appending it to divTileisParent
       divTileisParent.append(articleImageTile);
 
-      //image class search-image
+      //image class search-image child of articleImageTile
       var imageSearch = $("<img>");
       imageSearch.addClass("search-image");
       imageSearch.attr("style", "margin-left:20px");
       imageSearch.attr("src", response.hits[i].recipe.image);
       articleImageTile.append(imageSearch);
-    }
 
-    $(".external-link-button").on("click", function(event) {
-      event.preventDefault();
-      var getCooking = response.hits[i].recipe.url;
+      // API call for total price
 
-      window.location = getCooking;
-    });
-    // recipe total price
-    $.ajax({
-      url: queryURLsecondApi,
-      method: "GET"
-    }).then(function(response) {
-      console.log(response.results[i]);
+      var cleanlabel = response.hits[i].recipe.label.split("-")[0];
 
-      var priceId = response.results[i].id;
+      var labelappid = encodeURIComponent(cleanlabel);
 
-      var priceBreakDown =
-        "https://api.spoonacular.com/recipes/" +
-        priceId +
-        "/priceBreakdownWidget.json?apiKey=" +
+      var secondappKey = "b570c798b46047929f8bfc634db0cf67";
+
+      var queryURLsecondApi =
+        "https://api.spoonacular.com/recipes/search?query=" +
+        labelappid +
+        "&apiKey=" +
         secondappKey;
-
       $.ajax({
-        url: priceBreakDown,
+        url: queryURLsecondApi,
         method: "GET"
-      }).then(function(priceResponse) {
-        console.log(priceResponse, response);
+      }).then(function(responseSpoonacular) {
+        console.log(responseSpoonacular.results[i]);
 
-        var dollarPrice = priceResponse.totalCost / 100;
-        var dollarPricefixed = dollarPrice.toFixed(2);
+        var priceId = responseSpoonacular.results[i].id;
 
-        $("#starCost").empty();
-        $("#starCost").append(dollarPricefixed);
+        var priceBreakDown =
+          "https://api.spoonacular.com/recipes/" +
+          priceId +
+          "/priceBreakdownWidget.json?apiKey=" +
+          secondappKey;
+
+        $.ajax({
+          url: priceBreakDown,
+          method: "GET"
+        }).then(function(priceResponse) {
+          console.log(priceResponse, response);
+
+          var dollarPrice = priceResponse.totalCost / 100;
+          var dollarPricefixed = dollarPrice.toFixed(2);
+          $(".cost-number").append(dollarPricefixed);
+        });
       });
-    });
+    }
   });
 }
 
@@ -327,6 +318,6 @@ $("#searchButton").on("click", function(event) {
   var inputRecipe = $("#searchInput")
     .val()
     .trim();
-
+  $("#test").empty();
   searchForRecipe(inputRecipe);
 });
