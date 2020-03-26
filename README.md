@@ -1,3 +1,3 @@
-# Rec[i]pe: A recipe finder application
+# Rec[i]pe: Your application to find the best recipes
 
-URL:  https://juandaniel0530.github.io/Project-one/
+URL:  https://juandaniel0530.github.io/RecipeFinder/
