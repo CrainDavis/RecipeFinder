@@ -275,17 +275,17 @@ function searchForRecipe(food) {
     favoriteLocalStorage.on("click", function(event) {
       event.preventDefault();
       var favoriteRecipeSelected = {};
-
+      var currentFavorites = JSON.parse(localStorage.getItem("favorite"));
       var favoriteOneLink = $(this).attr("data-link");
-
       favoriteRecipeSelected.link = favoriteOneLink;
       favoriteRecipeSelected.label = $(this).attr("data-label");
-      recipeSelectedArray.push(favoriteRecipeSelected);
-
-      var myFavoriteRecipe = localStorage.setItem(
-        "favorite",
-        JSON.stringify(recipeSelectedArray)
-      );
+      if (currentFavorites !== null) {
+        currentFavorites.push(favoriteRecipeSelected);
+        localStorage.setItem("favorite", JSON.stringify(currentFavorites));
+      } else {
+        recipeSelectedArray.push(favoriteRecipeSelected);
+        localStorage.setItem("favorite", JSON.stringify(recipeSelectedArray));
+      }
     });
   });
 }
@@ -311,8 +311,7 @@ if (favorites == null) {
   }
 }
 
-// Local Storage Testing
-
+// Search Recipe by click event
 $("#searchButton").on("click", function(event) {
   event.preventDefault();
 
@@ -323,6 +322,7 @@ $("#searchButton").on("click", function(event) {
   searchForRecipe(inputRecipe);
 });
 
+//Search Recipe by pressing Enter key
 $(".control").on("keydown", function(event) {
   if (event.which == 13) {
     var inputRecipe = $("#searchInput")
