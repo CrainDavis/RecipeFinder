@@ -87,7 +87,7 @@ function searchForRecipe(food) {
       var spanCaloriesTag = $("<span>");
       spanCaloriesTag.addClass("result-calories");
       iCaloriesTag.addClass("fas fa-fire");
-      spanCaloriesTag.html(response.hits[i].recipe.calories.toFixed(0));
+      spanCaloriesTag.html(response.hits[i].recipe.calories.toFixed(0) + "cal");
       //appending it into divResultCalories
       divResultCalories.append(iCaloriesTag, spanCaloriesTag);
 
@@ -117,7 +117,7 @@ function searchForRecipe(food) {
       var spanCookingTag = $("<span>");
       spanCookingTag.addClass("result-prep-time");
       iCookingTime.addClass("fas fa-clock");
-      spanCookingTag.html(response.hits[i].recipe.totalTime);
+      spanCookingTag.html(response.hits[i].recipe.totalTime + "min");
       // appending them into divResultPrepTime
       divResultPrepTime.append(iCookingTime, spanCookingTag);
 

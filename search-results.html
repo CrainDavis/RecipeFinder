@@ -14,11 +14,12 @@
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
     ></script>
     <!-- project CSS -->
+    <link rel="stylesheet" href="assets/css/animation.css">
     <link rel="stylesheet" href="assets/css/search-results.css" />
   </head>
   <body>
     <!-- PAGE HEADER -->
-    <section class="hero is-danger">
+    <section class="main-el hero is-danger">
       <div class="hero-body">
         <div class="tile is-ancestor">
           <!-- header text -->
@@ -66,7 +67,7 @@
 
     <br />
 
-    <div class="container is-fluid">
+    <div class="el1 container is-fluid">
       <!-- search input -->
       <article id="searchRecipe" class="tile is-child notification is-danger">
         <p class="title">Find a Recipe</p>
@@ -92,12 +93,15 @@
 
     <div id="test"></div>
     <br />
-    <footer id="footer" class="footer">
+    <footer id="footer" class="main-el footer">
       <div class="content has-text-centered">
         <p>&copy; Juan Acosta, Paul Wachira, & Chyna Davis</p>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="assets/js/animation.js"></script>
     <script src="assets/js/search-results-page.js"></script>
   </body>
 </html>

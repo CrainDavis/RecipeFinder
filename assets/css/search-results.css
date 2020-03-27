@@ -116,3 +116,9 @@ input[type="text"] {
   margin-left: 30px;
   margin-right: 30px;
 }
+
+@media (max-width: 768px) {
+  li {
+    font-size: 13px;
+  }
+}

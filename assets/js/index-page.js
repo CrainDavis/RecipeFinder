@@ -63,7 +63,7 @@ $.ajax({
   // Calories from API
   var calorieCount1 = response.hits[0].recipe.calories;
   var calorieCount1Fixed = calorieCount1.toFixed(0);
-  $("#calorieCount1").append(calorieCount1Fixed);
+  $("#calorieCount1").append(calorieCount1Fixed + "cal");
 
   // Serving Size from API
   var servingNumber1 = response.hits[0].recipe.yield;
@@ -71,7 +71,7 @@ $.ajax({
 
   // Cooking time
   var prepTime1 = response.hits[0].recipe.totalTime;
-  $("#prepTime1").append(prepTime1);
+  $("#prepTime1").append(prepTime1 + "min");
 
   $.ajax({
     url: queryURLsecondApi,
