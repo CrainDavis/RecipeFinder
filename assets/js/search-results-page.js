@@ -117,7 +117,11 @@ function searchForRecipe(food) {
       var spanCookingTag = $("<span>");
       spanCookingTag.addClass("result-prep-time");
       iCookingTime.addClass("fas fa-clock");
-      spanCookingTag.html(response.hits[i].recipe.totalTime + "min");
+      if (response.hits[i].recipe.totalTime == 0) {
+        spanCookingTag.html("--");
+      } else {
+        spanCookingTag.html(response.hits[i].recipe.totalTime + "min");
+      }
       // appending them into divResultPrepTime
       divResultPrepTime.append(iCookingTime, spanCookingTag);
 
@@ -315,4 +319,14 @@ $("#searchButton").on("click", function(event) {
     .trim();
   $("#test").empty();
   searchForRecipe(inputRecipe);
+});
+
+$(".control").on("keydown", function(event) {
+  if (event.which == 13) {
+    var inputRecipe = $("#searchInput")
+      .val()
+      .trim();
+    $("#test").empty();
+    searchForRecipe(inputRecipe);
+  }
 });
