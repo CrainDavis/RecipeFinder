@@ -14,11 +14,12 @@
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
     ></script>
     <!-- project CSS -->
+    <link rel="stylesheet" href="assets/css/animation.css" />
     <link rel="stylesheet" href="assets/css/index-style.css" />
   </head>
   <body>
     <!-- PAGE HEADER -->
-    <section class="hero is-danger">
+    <section class="main-el hero is-danger">
       <div class="hero-body">
         <div class="tile is-ancestor">
           <!-- header text -->
@@ -74,7 +75,7 @@
               <!-- search section -->
               <article
                 id="searchRecipe"
-                class="tile is-child notification is-danger"
+                class="el1 tile is-child notification is-danger"
               >
                 <div class="tile is-ancestor">
                   <div class="tile is-vertical is-8">
@@ -114,7 +115,7 @@
               <!-- suggestions -->
               <article
                 id="recipeSuggestions"
-                class="tile is-child notification is-danger"
+                class="el2 tile is-child notification is-danger"
               >
                 <p class="title">Suggestions</p>
                 <p class="subtitle">popular recipe you must try!</p>
@@ -172,7 +173,7 @@
         </div>
 
         <!-- LEFT TILE (1) -->
-        <div class="tile is-parent">
+        <div class="el3 tile is-parent">
           <!-- favorite recipes -->
           <article
             id="recipeFavorite"
@@ -209,11 +210,14 @@
 
     <br />
 
-    <footer id="footer" class="footer">
+    <footer id="footer" class="main-el footer">
       <div class="content has-text-centered">
         <p>&copy; Juan Acosta, Paul Wachira, & Chyna Davis</p>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
+    <script src="assets/js/animation.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/index-page.js"></script>
     <script src="assets/js/search-results-page.js"></script>
