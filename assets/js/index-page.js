@@ -46,7 +46,9 @@ $.ajax({
   var suggestionrecipe1Link = response.hits[0].recipe.url;
   console.log(suggestionrecipe1Link);
   var suggestionRecipe1 = response.hits[0].recipe.label;
-  var suggestionRecipe1Url = $("<a>").attr("href", suggestionrecipe1Link);
+  var suggestionRecipe1Url = $("<a>")
+    .attr("href", suggestionrecipe1Link)
+    .attr("target", "_blank");
 
   suggestionRecipe1Url.append(suggestionRecipe1);
   $("#suggestionRecipe1").append(suggestionRecipe1Url);
