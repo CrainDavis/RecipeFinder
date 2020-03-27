@@ -100,3 +100,9 @@ $.ajax({
     });
   });
 });
+
+$("#clearButton").on("click", function(event) {
+  event.preventDefault();
+  localStorage.clear();
+  $("#favoriteButtonsTileIndex").empty();
+});
