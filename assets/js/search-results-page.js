@@ -76,23 +76,9 @@ function searchForRecipe(food) {
       //appending it into divColumnRecipeStats
       divColumnRecipeStats.append(divResultRecipe);
 
-      // div class result-cost first child of divResultRecipe
-      var divResultCost = $("<div>");
-      divResultCost.addClass("result-cost column is-one-quarter");
-      //appending it into divResultRecipe
-      divResultRecipe.append(divResultCost);
-
-      // i cost and span cost children of divResultCost
-      var cost = $("<i>");
-      var spanCostTag = $("<span>");
-      spanCostTag.addClass("cost-number");
-      cost.addClass("fas fa-dollar-sign");
-      //appending them to divResultCost
-      divResultCost.append(cost, spanCostTag);
-
       // div class result-calories second child of divResultRecipe
       var divResultCalories = $("<div>");
-      divResultCalories.addClass("column is-one-quarter");
+      divResultCalories.addClass("column is-one-third");
       //appending it into divResultRecipe
       divResultRecipe.append(divResultCalories);
 
@@ -107,7 +93,7 @@ function searchForRecipe(food) {
 
       // div class result-servings third child of divResultRecipe
       var divResultServings = $("<div>");
-      divResultServings.addClass("column is-one-quarter");
+      divResultServings.addClass("column is-one-third");
       //appending it into divResultRecipe
       divResultRecipe.append(divResultServings);
 
@@ -122,7 +108,7 @@ function searchForRecipe(food) {
 
       // div class result-prepTime fourth child of divResultRecipe
       var divResultPrepTime = $("<div>");
-      divResultPrepTime.addClass("column is-one-quarter");
+      divResultPrepTime.addClass("column is-one-third");
       //appending it into divResultRecipe
       divResultRecipe.append(divResultPrepTime);
 
@@ -230,6 +216,9 @@ function searchForRecipe(food) {
       favoriteButton.addClass("favorite-button is-large is danger");
       favoriteButton.attr("style", "margin-right:50px");
       favoriteButton.html("Favorite ");
+      favoriteButton.attr("data-label", response.hits[i].recipe.label);
+      favoriteButton.attr("data-link", response.hits[i].recipe.url);
+
       articleButtons.append(favoriteButton);
 
       // i class fas fa-heart
@@ -269,48 +258,54 @@ function searchForRecipe(food) {
       imageSearch.attr("style", "margin-left:20px");
       imageSearch.attr("src", response.hits[i].recipe.image);
       articleImageTile.append(imageSearch);
-
-      // API call for total price
-
-      var cleanlabel = response.hits[i].recipe.label.split("-")[0];
-
-      var labelappid = encodeURIComponent(cleanlabel);
-
-      var secondappKey = "b570c798b46047929f8bfc634db0cf67";
-
-      var queryURLsecondApi =
-        "https://api.spoonacular.com/recipes/search?query=" +
-        labelappid +
-        "&apiKey=" +
-        secondappKey;
-      $.ajax({
-        url: queryURLsecondApi,
-        method: "GET"
-      }).then(function(responseSpoonacular) {
-        console.log(responseSpoonacular.results[i]);
-
-        var priceId = responseSpoonacular.results[i].id;
-
-        var priceBreakDown =
-          "https://api.spoonacular.com/recipes/" +
-          priceId +
-          "/priceBreakdownWidget.json?apiKey=" +
-          secondappKey;
-
-        $.ajax({
-          url: priceBreakDown,
-          method: "GET"
-        }).then(function(priceResponse) {
-          console.log(priceResponse, response);
-
-          var dollarPrice = priceResponse.totalCost / 100;
-          var dollarPricefixed = dollarPrice.toFixed(2);
-          $(".cost-number").append(dollarPricefixed);
-        });
-      });
     }
+
+    var favoriteLocalStorage = $(".favorite-button");
+    var favoriteFromLocalStorage = JSON.parse(localStorage.getItem("favorite"));
+
+    var recipeSelectedArray = [];
+
+    // favorite on click event
+    favoriteLocalStorage.on("click", function(event) {
+      event.preventDefault();
+      var favoriteRecipeSelected = {};
+
+      var favoriteOneLink = $(this).attr("data-link");
+
+      favoriteRecipeSelected.link = favoriteOneLink;
+      favoriteRecipeSelected.label = $(this).attr("data-label");
+      recipeSelectedArray.push(favoriteRecipeSelected);
+
+      var myFavoriteRecipe = localStorage.setItem(
+        "favorite",
+        JSON.stringify(recipeSelectedArray)
+      );
+    });
   });
 }
+
+var recipeLabelLocalStorage = localStorage.getItem("label");
+var recipeLabelSelected = [];
+
+var favorites = JSON.parse(localStorage.getItem("favorite"));
+if (favorites == null) {
+  console.log("Nothing found");
+} else {
+  for (var i = 0; i < favorites.length; i++) {
+    var favoriteOne = $("<button>");
+    favoriteOne.addClass("favorite-button is-danger is-large is-fullwidth");
+    var favoritesRecipe = favorites[i].link;
+    var favoritesRecipeURL = $("<a>")
+      .attr("href", favoritesRecipe)
+      .attr("target", "_blank");
+
+    favoriteOne.html(favorites[i].label);
+    favoritesRecipeURL.append(favoriteOne);
+    $("#favoriteButtonsTileIndex").append(favoritesRecipeURL);
+  }
+}
+
+// Local Storage Testing
 
 $("#searchButton").on("click", function(event) {
   event.preventDefault();
