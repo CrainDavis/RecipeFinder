@@ -232,7 +232,9 @@ function searchForRecipe(food) {
       var getCookingButton = $("<button>");
       getCookingButton.addClass("external-link-button is-large is-danger");
       var getCookingHere = response.hits[i].recipe.url;
-      var getCookingHereUrl = $("<a>").attr("href", getCookingHere);
+      var getCookingHereUrl = $("<a>")
+        .attr("href", getCookingHere)
+        .attr("target", "_blank");
 
       getCookingButton.html("Get Cooking");
       //appending url to getCookinghereUrl
