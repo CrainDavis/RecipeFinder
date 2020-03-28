@@ -121,4 +121,10 @@ input[type="text"] {
   li {
     font-size: 13px;
   }
+  .favorite-button,
+  .external-link-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
 }
