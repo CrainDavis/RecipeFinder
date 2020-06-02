@@ -26,10 +26,20 @@ None is required.
 ## Usage:
 Go to [this link](https://juandaniel0530.github.io/RecipeFinder/) to use the application.
 
+How to use:
+* __step 1:__ Click the "GO" button to find a recipe.
+* __step 2:__ Search for any kind of recipe, and browse through the 10 generated suggestions.
+* __step 3:__ To view the preparation instructions, click the "Get Cooking" button. This will open up a new browser tab, which will take you to the recipe's page.
+* __step 4 (optional):__ If you like any of the recipes, click the "Favorite" button to save them. These saved recipes can be viewed again on the _Home Page_.
+
 ---
 
 ## Demonstration:
-coming soon...
+Go to [this link](https://drive.google.com/file/d/1pN7Pvg6ewkztv7dACnNpnSLQWb5qZjL-/view) to see a video demo on how to use RecipeFinder, or see images below:
+
+![home-page](assets/images/home-page.png)
+
+![search-page](assets/images/search-page.png)
 
 ---
 
