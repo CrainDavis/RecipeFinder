@@ -1,11 +1,10 @@
-$("#homeLinkBtn").on("click", function() {
+$("#homeLinkBtn").on("click", function () {
   window.location = "index.html";
 });
 
 // Add Function to search for the recipe
-// Add Function to search for the recipe
-var appid = "f14b0153";
-var appkey = "a9e1fba4d26e5911cb859859a0b102e5";
+var appid = "";
+var appkey = "";
 
 // Function to search for the food
 function searchForRecipe(food) {
@@ -18,8 +17,8 @@ function searchForRecipe(food) {
     appkey;
   $.ajax({
     url: queryUrl,
-    method: "GET"
-  }).then(function(response) {
+    method: "GET",
+  }).then(function (response) {
     console.log(response);
 
     for (var i = 0; i < response.hits.length; i++) {
@@ -272,7 +271,7 @@ function searchForRecipe(food) {
     var recipeSelectedArray = [];
 
     // favorite on click event
-    favoriteLocalStorage.on("click", function(event) {
+    favoriteLocalStorage.on("click", function (event) {
       event.preventDefault();
       var favoriteRecipeSelected = {};
       var currentFavorites = JSON.parse(localStorage.getItem("favorite"));
@@ -312,22 +311,18 @@ if (favorites == null) {
 }
 
 // Search Recipe by click event
-$("#searchButton").on("click", function(event) {
+$("#searchButton").on("click", function (event) {
   event.preventDefault();
 
-  var inputRecipe = $("#searchInput")
-    .val()
-    .trim();
+  var inputRecipe = $("#searchInput").val().trim();
   $("#test").empty();
   searchForRecipe(inputRecipe);
 });
 
 //Search Recipe by pressing Enter key
-$(".control").on("keydown", function(event) {
+$(".control").on("keydown", function (event) {
   if (event.which == 13) {
-    var inputRecipe = $("#searchInput")
-      .val()
-      .trim();
+    var inputRecipe = $("#searchInput").val().trim();
     $("#test").empty();
     searchForRecipe(inputRecipe);
   }

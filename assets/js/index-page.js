@@ -1,18 +1,18 @@
 // On click events
 // search for recipe
-$("#searchLinkBtn").on("click", function() {
+$("#searchLinkBtn").on("click", function () {
   window.location = "search-results.html";
 });
 
 // Go button
-$("#searchButton").on("click", function() {
+$("#searchButton").on("click", function () {
   window.location = "search-results.html";
 });
 
 // APi variables
 
-var appid = "f14b0153";
-var appkey = "a9e1fba4d26e5911cb859859a0b102e5";
+var appid = "";
+var appkey = "";
 var food = "popular";
 var queryURL =
   "https://api.edamam.com/search?q=" +
@@ -26,15 +26,15 @@ var queryURL =
 // Suggestion  image 1
 $.ajax({
   url: queryURL,
-  method: "GET"
-}).then(function(response) {
+  method: "GET",
+}).then(function (response) {
   console.log(response);
   var suggestionRecipe1image = response.hits[0].recipe.image;
   var cleanlabel = response.hits[0].recipe.label.split("-")[0];
 
   var labelappid = encodeURIComponent(cleanlabel);
 
-  var secondappKey = "b570c798b46047929f8bfc634db0cf67";
+  var secondappKey = "";
 
   var queryURLsecondApi =
     "https://api.spoonacular.com/recipes/search?query=" +
@@ -77,8 +77,8 @@ $.ajax({
 
   $.ajax({
     url: queryURLsecondApi,
-    method: "GET"
-  }).then(function(response) {
+    method: "GET",
+  }).then(function (response) {
     console.log(response.results[0]);
 
     var priceId = response.results[0].id;
@@ -91,8 +91,8 @@ $.ajax({
 
     $.ajax({
       url: priceBreakDown,
-      method: "GET"
-    }).then(function(priceResponse) {
+      method: "GET",
+    }).then(function (priceResponse) {
       console.log(priceResponse, response);
 
       var dollarPrice = priceResponse.totalCost / 100;
@@ -103,7 +103,7 @@ $.ajax({
   });
 });
 
-$("#clearButton").on("click", function(event) {
+$("#clearButton").on("click", function (event) {
   event.preventDefault();
   localStorage.clear();
   $("#favoriteButtonsTileIndex").empty();

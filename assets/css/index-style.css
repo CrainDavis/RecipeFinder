@@ -1,114 +1,127 @@
 /* OVER ALL */
 .hide {
-    display: none;
+  display: none;
 }
 
 /*==============================================================================*/
 
 /* PAGE HEADER */
 #pageHeaderText {
-    padding-left: 0px;
-    padding-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 #homeLinkBtn:hover {
-    background-color: #ef8499;
+  background-color: #ef8499;
 }
 #searchLinkBtn:hover {
-    background-color: #ef8499;
+  background-color: #ef8499;
 }
 
 /*==============================================================================*/
 
 /* SEARCH RECIPE */
-#searchRecipe, #searchSection, #searchSectionIcon {
-    background-color: #b22743;
+#searchRecipe,
+#searchSection,
+#searchSectionIcon {
+  background-color: #b22743;
 }
 #searchButton {
-    background-color: #ef8499;
-    font-weight: bold;
-    color: white;
-    border: 2px solid white;
+  background-color: #ef8499;
+  font-weight: bold;
+  color: white;
+  border: 2px solid white;
 }
 #searchButton:hover {
-    background-color: #ffebef;
-    color: #ff3860;
-    border: 2px solid #ff3860;
+  background-color: #ffebef;
+  color: #ff3860;
+  border: 2px solid #ff3860;
 }
 
 /*==============================================================================*/
 
 /* RECIPE SUGGESTIONS */
 #recipeSuggestions {
-    background-color: #e53256;
+  background-color: #e53256;
 }
 #suggestionCard1 {
-    background-color: #ef8499;
+  background-color: #ef8499;
 }
 #suggestionInfo1 {
-    color: white;
-    text-align: center;
-    font-size: 20px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
 }
 #suggestionCard1:hover {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
-    box-shadow: 5px 5px 15px #7f1c30;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px #7f1c30;
 }
 #suggestionButton1 {
-    text-decoration: none;
+  text-decoration: none;
 }
-#calorieCount1, #calorieCount2, #calorieCount3, #calorieCount4,
-#servingNumber1, #servingNumber2, #servingNumber3, #servingNumber4,
-#prepTime1, #prepTime2, #prepTime3, #prepTime4,
-#costNumber1, #costNumber2, #costNumber3, #costNumber4 {
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    color: #ff3860;
-    font-weight: bold;
-    text-align: center;
+#calorieCount1,
+#calorieCount2,
+#calorieCount3,
+#calorieCount4,
+#servingNumber1,
+#servingNumber2,
+#servingNumber3,
+#servingNumber4,
+#prepTime1,
+#prepTime2,
+#prepTime3,
+#prepTime4,
+#costNumber1,
+#costNumber2,
+#costNumber3,
+#costNumber4 {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  color: #ff3860;
+  font-weight: bold;
+  text-align: center;
 }
 
 /*==============================================================================*/
 
 /* FAVORITE RECIPES */
 #recipeFavorite {
-    background-color: #7f1c30;
+  background-color: #7f1c30;
 }
 #favoriteButtonsTile {
-    background-color: #b22743;
+  background-color: #b22743;
 }
 .favorite-button {
-    width: 100%;
-    background-color: #ef8499;
-    color: white;
-    border: none;
-    margin-bottom: 20px;
-    padding: 15px;
-    font-size: 20px;
-    font-weight: bold;
+  width: 100%;
+  background-color: #ef8499;
+  color: white;
+  border: none;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .favorite-button:hover {
-    background-color: #ffebef;
-    color: #ff3860;
-    border: 2px solid #ff3860;
+  background-color: #ffebef;
+  color: #ff3860;
+  border: 2px solid #ff3860;
 }
 #clearButton {
-    font-weight: bold;
+  font-weight: bold;
 }
 #clearButton:hover {
-    background-color: #ffebef;
-    color: #ff3860;
-    border: 2px solid #ff3860;
+  background-color: #ffebef;
+  color: #ff3860;
+  border: 2px solid #ff3860;
 }
 
 /*==============================================================================*/
 
 /* PAGE FOOTER */
 #footer {
-    background-color: #ff3860;
-    color: white;
-    font-size: 25px;
+  background-color: #ff3860;
+  color: white;
+  font-size: 25px;
 }
-

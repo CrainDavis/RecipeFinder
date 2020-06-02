@@ -1,26 +1,55 @@
-# rec[i]pe: a recipe finder application
+# Recipe Finder
+  ![GitHub repo size](https://img.shields.io/github/repo-size/CrainDavis/RecipeFinder?style=for-the-badge) ![GitHub code size](https://img.shields.io/github/languages/code-size/CrainDavis/RecipeFinder?color=gold&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/CrainDavis/RecipeFinder?color=green&style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/CrainDavis/RecipeFinder?color=red&style=for-the-badge)
+
+---
 
 ## Description:
-* This application is used to find recipes based on the user’s meal input.
-* Enter your meal into the search field, and you’ll be presented with its Ingredients, cooking instructions as well as health information.
+This application allows the user to view popular recipes, search for recipes based on a keyword such as "cookies", "pasta", or "vegan", or save their favorite recipes to be made again and again. Each search allows the user to view 10 recipes from the Edamam API. The generated recipes also come with the list of ingredients, nutritional information, estimated cost (provided by the Spoonacular API), an image, and a link to the preparation instructions. 
 
-## Group Members:
-* Chyna Davis  - Worked on designing, styling and animating of the HTML pages
-* Juan Acosta   - Worked with the APIs and search functionality
-* Paul Wachira - Worked on populating and retrieving items from local storage
+---
 
-## Application Features:
-* Users can find recipe ideas based on meals they want to get more information on.
-* Users can save preferred recipes to view later.
-* Users can link to websites where they can get cooking instructions about the recipe.
+## Table of Contents:
+* [Installation](#installation)
+* [Usage](#usage)
+* [Demonstration](#demonstration)
+* [License](#license)
+* [Resources](#resources)
+* [Contributors](#contributors)
 
-## Technologies Used:
-* Bulma CSS Framework: https://bulma.io/documentation/overview/start/
-* Edamam API: https://developer.edamam.com/
-* Spoonacular API: https://spoonacular.com/food-api
-* jQuery library: https://jquery.com/
-* anime.js library: https://animejs.com/
+---
 
-## URLs:
-* Deployed App: https://juandaniel0530.github.io/RecipeFinder/
-* Github Repo: https://github.com/juandaniel0530/RecipeFinder
+## Installation:
+None is required.
+
+---
+
+## Usage:
+Go to [this link](https://juandaniel0530.github.io/RecipeFinder/) to use the application.
+
+---
+
+## Demonstration:
+coming soon...
+
+---
+
+## License:
+[MIT License](https://opensource.org/licenses/MIT)
+
+---
+
+## Resources:
+* APIs:
+  * [Edamam API](https://developer.edamam.com/)
+  * [Spoonacular API](https://spoonacular.com/food-api)
+* technologies:
+  * [Bulma CSS Framework](https://bulma.io/documentation/overview/start/)
+  * [jQuery library](https://jquery.com/)
+  * [anime.js libary](https://animejs.com/)
+
+---
+
+## Contributors:
+* Chyna Davis (https://github.com/CrainDavis)
+* Juan Acosta (https://github.com/juandaniel0530)
+* Paul Wachira (https://github.com/paulcmd)

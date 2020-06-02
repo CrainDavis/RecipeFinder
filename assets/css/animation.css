@@ -1,3 +1,6 @@
-.main-el, .el1, .el2, .el3 {
-    opacity: 0;
+.main-el,
+.el1,
+.el2,
+.el3 {
+  opacity: 0;
 }
